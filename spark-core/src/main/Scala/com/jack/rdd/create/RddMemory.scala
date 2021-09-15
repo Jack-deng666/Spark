@@ -12,6 +12,8 @@ object RddMemory {
   def main(args: Array[String]): Unit = {
     // TODO 创建执行环境
     val conf = new SparkConf().setMaster("local[*]").setAppName("create")
+    // 设置并行度
+    conf.set("spark.default.parallelism", "5")
     val sc = new SparkContext(conf)
     // TODO 从内存里面创建RDD
     val seq = Seq[Int](1, 2, 3, 4, 5, 6)
