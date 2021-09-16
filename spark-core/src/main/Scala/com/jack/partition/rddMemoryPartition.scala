@@ -24,7 +24,7 @@ object rddMemoryPartition {
                 }
      */
 
-    val rdd = sc.makeRDD(List(1, 2, 3, 4, 5),2)
+    val rdd = sc.makeRDD(List(1, 2, 3, 4),3)
 //    rdd.collect().foreach(println)
     rdd.saveAsTextFile("output")
     sc.stop()
