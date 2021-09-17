@@ -17,6 +17,11 @@ _##章节介绍：_
 ### 13、rdd算子
 #### 13.1 transformation（转换）
             功能的补充和封装，就是将旧的RDD转换为新的RDD
+           ` 注意（四个聚合算子的区别）
+            reduceByKey,    :分区内和分区间的聚合一样
+            aggregateByKey  :分区内和分区间的聚合可以不一样
+            foldByKey       ：
+            combineByKey`   ：
 ####    13.2 action（行动）
             触发任务执行her调度的苏算子
  

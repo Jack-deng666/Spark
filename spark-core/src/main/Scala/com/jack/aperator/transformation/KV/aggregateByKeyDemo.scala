@@ -37,7 +37,7 @@ object aggregateByKeyDemo {
 
     val resultRdd: RDD[(String, Float)] = newRdd.mapValues({
       case (value, cnt) =>
-        println(value/cnt)
+        println(value, cnt)
         value / cnt
 
     })
