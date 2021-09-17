@@ -5,8 +5,7 @@
  */
 object test {
   def main(args: Array[String]): Unit = {
-    var data = Array(1,2,3,5)
-    println(data.take(2).mkString(","))
+    println(3/2)
   }
 
 }
