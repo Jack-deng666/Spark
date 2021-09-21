@@ -24,4 +24,10 @@ _##章节介绍：_
             combineByKey`   ：
 ####    13.2 action（行动）
             触发任务执行her调度的苏算子
+
+### 14、 序列化问题（Kryo序列化框架）
+
+### 15、rdd依赖关系(容错) ![依赖.png](img.png)
+#### 15.1 Stage ![任务划分.png](img.png)
+
  
