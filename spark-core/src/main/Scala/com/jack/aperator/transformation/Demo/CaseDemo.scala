@@ -1,9 +1,12 @@
 package com.jack.aperator.transformation.Demo
-
 import org.apache.spark.rdd.RDD
 import org.apache.spark.{SparkConf, SparkContext}
 
-object Demo1 {
+object CaseDemo {
+  /**
+   * 解决每个省每个广告的点击量的前三名  主要是用reduceByKey和groupByKey实现（他们有分区内聚合和分区间聚合）相对groupBy+map的效率较高
+   * @param args
+   */
   def main(args: Array[String]): Unit = {
     val sparkConf: SparkConf = new SparkConf().setMaster("local[*]").setAppName("Demo1")
     val sc = new SparkContext(sparkConf)
@@ -20,6 +23,7 @@ object Demo1 {
     value1.collect().foreach(println)
 
     /**
+     *
      *  (4,List((12,25), (2,22), (16,22)))
         (8,List((2,27), (20,23), (11,22)))
         (6,List((16,23), (24,21), (22,20)))
@@ -44,7 +48,5 @@ object Demo1 {
 //    print(tuples1.mkString(","))
     //统计各省广告点击量的前3
 
-
   }
-
 }
