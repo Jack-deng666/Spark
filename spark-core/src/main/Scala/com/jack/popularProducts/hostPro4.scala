@@ -83,7 +83,11 @@ object hostPro4 {
    */
   case class HotCategory(cid: String, var clickCnt: Int, var orderCnt: Int, var payCnt: Int)
 
-
+  /**
+   * 自定义累加器
+   * input泛型
+   * output泛型
+   */
   class HotCategoryAccumulate extends AccumulatorV2[(String, String ), mutable.Map[String, HotCategory]]{
     private val hcMap = mutable.Map[String, HotCategory]()
     override def isZero: Boolean = {
