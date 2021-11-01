@@ -1,3 +1,5 @@
+import org.apache.spark.{SparkConf, SparkContext}
+
 /**
  * @author jack Deng
  * @date 2021/9/15 14:38
@@ -5,7 +7,10 @@
  */
 object test {
   def main(args: Array[String]): Unit = {
-    println(3/2)
+    val conf = new SparkConf().setMaster("local[*]").setAppName("wc")
+    val sc = new SparkContext(conf)
+
+
   }
 
 }

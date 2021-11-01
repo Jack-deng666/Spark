@@ -11,6 +11,7 @@
     <modules>
         <module>spark-core</module>
         <module>spark-sql</module>
+        <module>spark-sream</module>
     </modules>
     <dependencies>
         <!-- https://mvnrepository.com/artifact/org.apache.spark/spark-core -->

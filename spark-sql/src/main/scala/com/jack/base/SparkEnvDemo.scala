@@ -12,7 +12,7 @@ object SparkEnvDemo {
       .appName("SparkEnvdemo")
       .getOrCreate()
     import spark.implicits._
-    //todo 2、执行业务
+    // todo 2、执行业务
     val df: DataFrame = spark.read.json("data/user.json")
     val rdd: RDD[(String, Int)] = spark.sparkContext.makeRDD(List(("dengjirui", 21), ("dengjiwei", 18)))
 
@@ -30,17 +30,14 @@ object SparkEnvDemo {
     val rdd2: RDD[Row] = df.rdd
 
     val ds1: Dataset[User] = rdd.map {
-      case (name, age) => {
+      case (name, age) =>
         User(name, age)
-      }
     }.toDS()
     ds1.show()
-
-
 
     // todo 3、关闭连接
     spark.close()
 
   }
-case class User (name:String, id:Long)
+case class User (name:String, age:Long)
 }
