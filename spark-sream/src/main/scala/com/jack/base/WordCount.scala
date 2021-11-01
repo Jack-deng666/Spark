@@ -13,8 +13,8 @@ object WordCount {
   def main(args: Array[String]): Unit = {
     //todo 创建环境对象
     val conf: SparkConf = new SparkConf().setMaster("local[*]").setAppName("SparkStreamingg")
-    val ssc = new StreamingContext(conf, Seconds(10))
-    val dataStream: ReceiverInputDStream[String] = ssc.socketTextStream("10.0.0.22", 7777)
+    val ssc = new StreamingContext(conf, Seconds(3))
+    val dataStream: ReceiverInputDStream[String] = ssc.socketTextStream("101.42.96.237", 9999)
     val outData: DStream[(String, Int)] = dataStream.flatMap(_.split(",")).map(x => (x, 1)).reduceByKey(_ + _)
     outData.print()
     //todo 关闭环境对象
